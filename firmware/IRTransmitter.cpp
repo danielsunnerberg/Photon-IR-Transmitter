@@ -1,3 +1,4 @@
+#include "application.h"
 #include "IRTransmitter.h"
 
 const int IRTransmitter::duty_cycle = 50;
