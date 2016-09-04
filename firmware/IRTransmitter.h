@@ -1,3 +1,4 @@
+
 #ifndef IRTransmitter_h
 #define IRTransmitter_h
 
@@ -6,8 +7,8 @@
 class IRTransmitter
 {
     public:
-        IRTransmitter(unsigned int ir_output_pin, unsigned int led_pin);
-        void Transmit(unsigned int *data, size_t length);
+        IRTransmitter(uint8_t ir_output_pin, uint8_t led_pin);
+        void Transmit(unsigned int *data, size_t length, uint32_t wait = 5000);
 
     private:
         int ir_output_pin_;
