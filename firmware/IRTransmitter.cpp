@@ -7,7 +7,7 @@ const int IRTransmitter::period = (1000000 + carrier_frequency / 2) / carrier_fr
 const int IRTransmitter::high_time = period * duty_cycle / 100;
 const int IRTransmitter::low_time = period - high_time;
 
-IRTransmitter::IRTransmitter(uint8_t ir_output_pin, uint8_t led_pin {
+IRTransmitter::IRTransmitter(uint8_t ir_output_pin, uint8_t led_pin) {
     ir_output_pin_ = ir_output_pin;
     led_pin_ = led_pin;
 
