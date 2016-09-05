@@ -7,7 +7,7 @@ const int IRTransmitter::period = (1000000 + carrier_frequency / 2) / carrier_fr
 const int IRTransmitter::high_time = period * duty_cycle / 100;
 const int IRTransmitter::low_time = period - high_time;
 
-IRTransmitter::IRTransmitter(unsigned int ir_output_pin, unsigned int led_pin) {
+IRTransmitter::IRTransmitter(uint8_t ir_output_pin, uint8_t led_pin) {
     ir_output_pin_ = ir_output_pin;
     led_pin_ = led_pin;
 
@@ -39,7 +39,7 @@ void IRTransmitter::Space(unsigned int sLen) {
     while ((micros() - now) < dur); // just wait here until time is up
 }
 
-void IRTransmitter::Transmit(unsigned int *data, size_t length) {
+void IRTransmitter::Transmit(unsigned int *data, size_t length, uint32_t wait) {
     // First send the NEC RAW signal
     digitalWrite(led_pin_, HIGH);
     sig_time_ = micros(); // keeps rolling track of signal time to avoid impact of loop & code execution delays
@@ -48,5 +48,5 @@ void IRTransmitter::Transmit(unsigned int *data, size_t length) {
         if (i < length) Space(data[i]); // pointer will be moved by for loop
     }
     digitalWrite(led_pin_, LOW);
-    delay(500);
+    delay(wait);
 }

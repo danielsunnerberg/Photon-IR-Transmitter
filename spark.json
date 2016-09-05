@@ -1,6 +1,6 @@
 {
   "name": "IRTransmitter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "AnalysIR",
   "license": "",
   "description": "Simple IR Transmitter library for the Particle Photon. Full credit goes to: AnalysIR (https://www.analysir.com/blog/2015/09/01/simple-infrared-pwm-on-arduino-part-3-hex-ir-signals/)"
